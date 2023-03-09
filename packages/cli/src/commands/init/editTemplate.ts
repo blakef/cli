@@ -86,7 +86,6 @@ const UNDERSCORED_DOTFILES = [
   'watchmanconfig',
   'editorconfig',
   'bundle',
-  'ruby-version',
   'node-version',
   'xcode.env',
 ];
