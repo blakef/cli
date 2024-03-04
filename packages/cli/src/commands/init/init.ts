@@ -83,7 +83,8 @@ const bumpYarnVersion = async (silent: boolean, root: string) => {
   try {
     let yarnVersion = semver.parse(getYarnVersionIfAvailable());
 
-    if (yarnVersion) {
+    // `yarn set` is unsupported in 1.x
+    if (yarnVersion && yarnVersion.major > 1) {
       await executeCommand('yarn', ['set', 'version', YARN_VERSION], {
         root,
         silent,
