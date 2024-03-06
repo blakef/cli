@@ -5,7 +5,7 @@ import {
 } from '@react-native-community/cli-tools';
 import {Config} from '@react-native-community/cli-types';
 import {android} from '@react-native/core-cli-utils';
-import type {AndroidBuild} from '@react-native/core-cli-utils';
+import type {AndroidBuildOptions} from '@react-native/core-cli-utils';
 import execa from 'execa';
 import {getAndroidProject} from '../../config/getAndroidProject';
 import adb from '../runAndroid/adb';
@@ -74,7 +74,7 @@ async function buildAndroid(
     const options = {
       sourceDir: androidProject.sourceDir,
       appName: androidProject.appName,
-      mode: args.mode as AndroidBuild['mode'],
+      mode: args.mode as AndroidBuildOptions['mode'],
     };
 
     const task: string = tasks[0];

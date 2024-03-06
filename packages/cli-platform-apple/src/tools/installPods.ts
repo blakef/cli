@@ -9,7 +9,7 @@ import {
   CLIError,
   runSudo,
 } from '@react-native-community/cli-tools';
-import {ios} from '@react-native/core-cli-utils';
+import {apple} from '@react-native/core-cli-utils';
 
 interface PodInstallOptions {
   skipBundleInstall?: boolean;
@@ -31,7 +31,7 @@ async function runPodInstall(loader: Ora, options?: RunPodInstallOptions) {
         options?.newArchEnabled ? 'with New Architecture' : '',
       )} ${chalk.dim('(this may take a few minutes)')}`,
     );
-    await ios.bootstrap({
+    await apple.bootstrap({
       cwd: process.cwd(),
       bundleInstall: !options?.skipBundleInstall,
       newArchitecture: !!options?.newArchEnabled,
